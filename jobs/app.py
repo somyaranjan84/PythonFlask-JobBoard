@@ -1,6 +1,6 @@
 import sqlite3
 import datetime
-from flask import Flask, render_template, g
+from flask import Flask, render_template, g, request, redirect, url_for
 
 
 PATH = 'db/jobs.sqlite'
@@ -64,4 +64,4 @@ def review(employer_id):
 
         return redirect(url_for('employer', employer_id=employer_id))
 
-    return render_template('review.html', employer_id=employer_id) 
+    return render_template('review.html', employer_id=employer_id)
